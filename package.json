@@ -1,0 +1,18 @@
+{
+  "name": "nova-sort",
+  "version": "1.0.0",
+  "description": "A Nova.app extension for sorting selections",
+  "main": "Sort.novaextension/Scrips/main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisdl/nova-sort.git"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Chris DiLorenzo",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.5.3"
+  }
+}

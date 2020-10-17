@@ -1,0 +1,35 @@
+{
+  "identifier": "org.Sort",
+  "name": "Sort",
+  "organization": "Chris DiLorenzo",
+  "description": "Sort lines",
+  "version": "1.0",
+  "categories": ["commands"],
+  
+  "main": "main.js",
+  
+  "activationEvents": [ ],
+  
+  "entitlements": { },
+  
+  "commands": {
+    "editor": [
+      {
+        "title": "Sort --> Lines",
+        "command": "sort.lines"
+      },
+      {
+        "title": "Sort --> Inline",
+        "command": "sort.inline"
+      },
+      {
+        "title": "Sort --> By Line Length",
+        "command": "sort.byLineLength"
+      },
+      {
+        "title": "Sort --> By Line Length (reversed)",
+        "command": "sort.byLineLengthReversed"
+      }
+    ]
+  }
+}
