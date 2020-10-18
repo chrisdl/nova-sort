@@ -2,6 +2,8 @@
 
 Extension for nova.app that allows you to perform simple sorting on highlighted text.
 
+![usage](https://raw.githubusercontent.com/chrisdl/nova-sort/master/usage.png)
+
 # Usage
 
 Currently you can sort in 4 different ways:
