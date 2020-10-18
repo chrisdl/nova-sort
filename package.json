@@ -2,7 +2,7 @@
   "name": "nova-sort",
   "version": "1.0.0",
   "description": "A Nova.app extension for sorting selections",
-  "main": "Sort.novaextension/Scrips/main.js",
+  "main": "Sort.novaextension/Scripts/main.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chrisdl/nova-sort.git"
