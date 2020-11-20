@@ -1,7 +1,8 @@
-## Version 1.3.1 (2020-?-?)
+## Version 1.3.2 (2020-?-?)
 
+  - [DEV] adding eslint and standardjs.
   - Switching to semver.
-  - Support for sorting across multiple ranges [#1](https://github.com/chrisdl/nova-sort/pull/1)
+  - [FEATURE] Support for sorting across multiple ranges [#1](https://github.com/chrisdl/nova-sort/pull/1)
 
 ## Version 1.2 (2020-10-27)
 
