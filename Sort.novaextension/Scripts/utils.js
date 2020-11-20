@@ -1,19 +1,5 @@
-const TAB_CHAR_CODE = 9;
-
-function isLastCharacterANewLine(str) {
-  return str.slice(-1) === '\n';
-}
-
-function cleanText(text) {
-  if (isLastCharacterANewLine(text)) {
-    text = text.slice(0, -1);
-  }
-  return text;
-}
-
-function createLines(text) {
-  return text.split('\n')
-    .filter(x => x !== "");
+function lastInArrayIsEmptyString(arr) {
+  return arr.slice(-1)[0] === ''
 }
 
 function sortByLineLength(a, b) {
@@ -32,9 +18,7 @@ function sortByLineLengthReversed(a, b) {
 
 
 module.exports = {
-  cleanText,
-  createLines,
-  isLastCharacterANewLine,
+  lastInArrayIsEmptyString,
   sortByLineLength,
   sortByLineLengthReversed
 }

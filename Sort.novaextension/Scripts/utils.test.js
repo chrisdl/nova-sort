@@ -1,41 +1,7 @@
 const {
-  cleanText,
+  lastInArrayIsEmptyString,
   sortByLineLength,
-  sortByLineLengthReversed,
-  createLines } = require('./utils.js');
-
-test('returns text', () => {
-  const text = `b
-a
-c`;
-  expect(cleanText(text)).toBe(text)
-});
-
-test('removes stray newline from end if there is one to avoid weirdness', () => {
-  const text = `b
-a
-c
-`;
-  const expected = `b
-a
-c`;
-  expect(cleanText(text)).toBe(expected);
-});
-
-test('createLines does create lines', () => {
-  const text = `b
-1
-2`;
-  expect(createLines(text)).toEqual(['b','1','2'])
-});
-
-test('createLines removes newlines', () => {
-  const text = `b
-
-1
-2`;
-  expect(createLines(text)).toEqual(['b','1','2'])
-});
+  sortByLineLengthReversed } = require('./utils.js');
 
 test('sortByLineLength', () => {
   expect(['a', 'aa', 'b'].sort(sortByLineLength)).toEqual(['a', 'b', 'aa']);
@@ -52,3 +18,13 @@ test('sortByLineLengthReversed', () => {
   expect(['c', '  a'].sort(sortByLineLengthReversed)).toEqual(['c', '  a']);
   expect(['ccc', '  aa'].sort(sortByLineLengthReversed)).toEqual(['ccc', '  aa']);
 });
+
+test('lastInArrayisEmptyString', () => {
+  expect(lastInArrayIsEmptyString(['a', ''])).toBe(true);
+  expect(lastInArrayIsEmptyString(['a', 'b'])).toBe(false);
+  expect(lastInArrayIsEmptyString(['', 'b'])).toBe(false);
+  expect(lastInArrayIsEmptyString([])).toBe(false);
+  expect(lastInArrayIsEmptyString([null])).toBe(false);
+  expect(lastInArrayIsEmptyString([undefined])).toBe(false);
+  expect(lastInArrayIsEmptyString([1, 2])).toBe(false);
+})
