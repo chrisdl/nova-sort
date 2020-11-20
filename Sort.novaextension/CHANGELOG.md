@@ -1,8 +1,9 @@
-## Version 1.3.2 (2020-?-?)
+## Version 1.3.3 (2020-?-?)
 
-  - [DEV] adding eslint and standardjs.
+  - [FEATURE] remove the stupid `-->` arrows from the command names. [#3](https://github.com/chrisdl/nova-sort/pull/3)
+  - [DEV] adding eslint and standardjs. [#2](https://github.com/chrisdl/nova-sort/pull/2)
   - Switching to semver.
-  - [FEATURE] Support for sorting across multiple ranges [#1](https://github.com/chrisdl/nova-sort/pull/1)
+  - [FEATURE] Support for sorting across multiple ranges. [#1](https://github.com/chrisdl/nova-sort/pull/1)
 
 ## Version 1.2 (2020-10-27)
 

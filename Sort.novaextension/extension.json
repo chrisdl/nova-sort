@@ -3,7 +3,7 @@
   "name": "Sort",
   "organization": "Chris DiLorenzo",
   "description": "Sort lines by content or length in the editor.",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "categories": ["commands"],
   "repository": "https://github.com/chrisdl/nova-sort",
   "bugs": "https://github.com/chrisdl/nova-sort/issues",
@@ -15,19 +15,19 @@
   "commands": {
     "editor": [
       {
-        "title": "Sort --> Lines",
+        "title": "Sort Lines",
         "command": "sort.lines"
       },
       {
-        "title": "Sort --> Inline",
+        "title": "Sort Inline",
         "command": "sort.inline"
       },
       {
-        "title": "Sort --> By Line Length",
+        "title": "Sort Lines by Line Length",
         "command": "sort.byLineLength"
       },
       {
-        "title": "Sort --> By Line Length (reversed)",
+        "title": "Sort Lines by Line Length (reversed)",
         "command": "sort.byLineLengthReversed"
       }
     ]
