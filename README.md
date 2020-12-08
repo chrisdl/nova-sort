@@ -1,3 +1,5 @@
+[![DeepSource](https://deepsource.io/gh/chrisdl/nova-sort.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/chrisdl/nova-sort/?ref=repository-badge)
+
 # Sort
 
 Extension for nova.app that allows you to perform simple sorting on highlighted text.
