@@ -1,4 +1,5 @@
 [![DeepSource](https://deepsource.io/gh/chrisdl/nova-sort.svg/?label=active+issues&show_trend=true)](https://deepsource.io/gh/chrisdl/nova-sort/?ref=repository-badge)
+[![Build Status](https://travis-ci.com/chrisdl/nova-sort.svg?branch=master)](https://travis-ci.com/chrisdl/nova-sort)
 
 # Sort
 
