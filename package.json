@@ -1,6 +1,6 @@
 {
   "name": "nova-sort",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "A Nova.app extension for sorting selections",
   "main": "Sort.novaextension/Scripts/main.js",
   "repository": {
