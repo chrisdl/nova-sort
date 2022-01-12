@@ -10,14 +10,36 @@ function sortByLineLength (a, b) {
 }
 
 function sortByLineLengthReversed (a, b) {
-  a = a.trim()
-  b = b.trim()
-  if (a.length === b.length) return 0
-  return b.length - a.length
+  return sortByLineLength(b, a)
+}
+
+// ABCabc321 --> 123aAbBcC
+function sortCaseSensitive (a, b) {
+  const result = new Intl.Collator(
+    undefined,
+    {
+      ignorePunctuation: true,
+      numeric: true
+    }
+  ).compare(a, b)
+  return result
+}
+
+function sortCaseInsensitive (a, b) {
+  return new Intl.Collator(
+    undefined,
+    {
+      ignorePunctuation: true,
+      sensitivity: 'base',
+      numeric: true
+    }
+  ).compare(a, b)
 }
 
 module.exports = {
   lastInArrayIsEmptyString,
   sortByLineLength,
-  sortByLineLengthReversed
+  sortByLineLengthReversed,
+  sortCaseSensitive,
+  sortCaseInsensitive
 }

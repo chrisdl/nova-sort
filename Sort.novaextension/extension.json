@@ -3,7 +3,7 @@
   "name": "Sort",
   "organization": "Chris DiLorenzo",
   "description": "Sort lines by content or length in the editor.",
-  "version": "1.3.7",
+  "version": "2.0.0",
   "categories": ["commands"],
   "repository": "https://github.com/chrisdl/nova-sort",
   "bugs": "https://github.com/chrisdl/nova-sort/issues",
@@ -17,6 +17,10 @@
       {
         "title": "Sort Lines",
         "command": "sort.lines"
+      },
+      {
+        "title": "Sort Lines (Case Sensitive)",
+        "command": "sort.lines-cs"
       },
       {
         "title": "Sort Inline",
