@@ -91,4 +91,5 @@ b
 ```
 
 # Sorting
+
 Behind the scenes we are using the [Intl.Collator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator) for the sorting. Since we are not hardcoding the locale I suspect the sorting will actually be slightly different depending on your locale and the language you are sorting, but I am not sure. If this is the case that's fantastic!. If you can confirm or deny this please open an issue with some examples.
