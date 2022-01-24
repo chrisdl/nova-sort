@@ -14,26 +14,14 @@ function sortByLineLengthReversed (a, b) {
 }
 
 // ABCabc321 --> 123aAbBcC
-function sortCaseSensitive (a, b) {
-  const result = new Intl.Collator(
-    undefined,
-    {
-      ignorePunctuation: true,
-      numeric: true
-    }
-  ).compare(a, b)
-  return result
+function sortCaseSensitive (options = {}) {
+  const opts = { ...options, sensitivity: 'variant' }
+  return new Intl.Collator(undefined, opts).compare
 }
 
-function sortCaseInsensitive (a, b) {
-  return new Intl.Collator(
-    undefined,
-    {
-      ignorePunctuation: true,
-      sensitivity: 'base',
-      numeric: true
-    }
-  ).compare(a, b)
+function sortCaseInsensitive (options = {}) {
+  const opts = { ...options, sensitivity: 'accent' }
+  return new Intl.Collator(undefined, opts).compare
 }
 
 module.exports = {

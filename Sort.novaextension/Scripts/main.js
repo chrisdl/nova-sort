@@ -21,7 +21,7 @@ nova.commands.register('sort.lines', (editor) => {
       lines.pop()
     }
 
-    const sortedLines = lines.sort(utils.sortCaseInsensitive)
+    const sortedLines = lines.sort(utils.sortCaseInsensitive())
 
     // Is there a way to store up a bunch of these edits and perform one big one?
     editor.edit((e) => {
@@ -44,7 +44,7 @@ nova.commands.register('sort.lines-cs', (editor) => {
       lines.pop()
     }
 
-    const sortedLines = lines.sort(utils.sortCaseSensitive)
+    const sortedLines = lines.sort(utils.sortCaseSensitive())
 
     // Is there a way to store up a bunch of these edits and perform one big one?
     editor.edit((e) => {
@@ -69,7 +69,7 @@ nova.commands.register('sort.inline', (editor) => {
   const sortedLines = lines.map(line => {
     return line
       .split('')
-      .sort(utils.sortCaseInsensitive)
+      .sort(utils.sortCaseInsensitive())
       .join('')
   })
 

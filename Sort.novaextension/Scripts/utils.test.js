@@ -36,43 +36,130 @@ test('sortCaseSensitive', () => {
   expect([
     'GO',
     'Gallery'
-  ].sort(sortCaseSensitive)).toEqual(['Gallery', 'GO'])
-  expect('ABCabc321'.split('').sort(sortCaseSensitive).join(''))
+  ].sort(sortCaseSensitive())).toEqual(['Gallery', 'GO'])
+  expect('ABCabc321'.split('').sort(sortCaseSensitive()).join(''))
     .toEqual('123aAbBcC')
-
-  // Gives preference for lowercase
-  expect('bB'.split('').sort(sortCaseSensitive).join(''))
-    .toEqual('bB')
-  expect('Bb'.split('').sort(sortCaseSensitive).join(''))
-    .toEqual('bB')
 })
 
 test('sortCaseInsensitive', () => {
-  // Gallery should still be before GO
   expect([
     'GO',
     'Gallery'
-  ].sort(sortCaseInsensitive)).toEqual(['Gallery', 'GO'])
+  ].sort(sortCaseInsensitive())).toEqual(['Gallery', 'GO'])
 
-  expect('ABCabc321'.split('').sort(sortCaseInsensitive).join(''))
+  expect('ABCabc321'.split('').sort(sortCaseInsensitive()).join(''))
     .toEqual('123AaBbCc')
 
-  expect('bB'.split('').sort(sortCaseInsensitive).join(''))
+  expect('bB'.split('').sort(sortCaseInsensitive()).join(''))
     .toEqual('bB')
-  expect('Bb'.split('').sort(sortCaseInsensitive).join(''))
+  expect('Bb'.split('').sort(sortCaseInsensitive()).join(''))
     .toEqual('Bb')
 
-  expect(['"2"', '"10"'].sort(sortCaseInsensitive))
-    .toEqual(['"2"', '"10"'])
-  expect(['2a', '1a'].sort(sortCaseInsensitive))
+  expect(['"2"', '"10"'].sort(sortCaseInsensitive()))
+    .toEqual(['"10"', '"2"'])
+  expect(['2a', '1a'].sort(sortCaseInsensitive()))
     .toEqual(['1a', '2a'])
-  expect(['alpha10', 'alpha2'].sort(sortCaseInsensitive))
-    .toEqual(['alpha2', 'alpha10'])
+  expect(['alpha10', 'alpha2'].sort(sortCaseInsensitive()))
+    .toEqual(['alpha10', 'alpha2'])
 })
 
-test('js sorter', () => {
+test('Capitalization matters', () => {
   expect([
-    'GO',
-    'Gallery'
-  ].sort()).toEqual(['GO', 'Gallery'])
+    'ABC',
+    'abc',
+    'Abc',
+    'aBc',
+    'abC',
+    'ABc'
+  ].sort(sortCaseSensitive()))
+    .toEqual([
+      'abc',
+      'abC',
+      'aBc',
+      'Abc',
+      'ABc',
+      'ABC'
+    ])
+})
+
+// They are all treated the same.
+test('Capitalization (intentionally) does not matter', () => {
+  expect([
+    'ABC',
+    'abc',
+    'Abc',
+    'aBc',
+    'abC',
+    'ABc'
+  ].sort(sortCaseInsensitive()))
+    .toEqual([
+      'ABC',
+      'abc',
+      'Abc',
+      'aBc',
+      'abC',
+      'ABc'
+    ])
+})
+
+// They are all treated the same.
+test('Numbers before letters.', () => {
+  expect([
+    'ABC',
+    123,
+    '123'
+  ].sort(sortCaseInsensitive()))
+    .toEqual([
+      123,
+      '123',
+      'ABC'
+    ])
+})
+
+test('Numeric sorting is a bit dumb (intentionally).', () => {
+  expect([
+    1,
+    2,
+    10
+  ].sort(sortCaseInsensitive()))
+    .toEqual([
+      1,
+      10,
+      2
+    ])
+  expect([
+    '1',
+    '2',
+    '10'
+  ].sort(sortCaseSensitive()))
+    .toEqual([
+      '1',
+      '10',
+      '2'
+    ])
+})
+
+test('Characters matters more than capitalization', () => {
+  // Even though we give preference to lowercase
+  // the fact that there is a 1 after 'ABC' and a 2
+  // trailing 'abc' means ABC1 gets precedence
+  expect([
+    'ABC1',
+    'abc2'
+  ].sort(sortCaseSensitive()))
+    .toEqual([
+      'ABC1',
+      'abc2'
+    ])
+})
+
+test('Accent matters', () => {
+  expect([
+    'ä',
+    'a'
+  ].sort(sortCaseSensitive()))
+    .toEqual([
+      'a',
+      'ä'
+    ])
 })
