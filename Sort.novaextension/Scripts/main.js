@@ -81,6 +81,31 @@ nova.commands.register('sort.inline', (editor) => {
   })
 })
 
+nova.commands.register('sort.inline-cs', (editor) => {
+  const range = editor.selectedRange
+  const text = editor.getTextInRange(range)
+  const lines = text.split('\n')
+  const isLastLineANewline = utils.lastInArrayIsEmptyString(lines)
+
+  // Remove trailing newline before shuffling (so it doesn't end up in middle)
+  if (isLastLineANewline) {
+    lines.pop()
+  }
+  const sortedLines = lines.map(line => {
+    return line
+      .split('')
+      .sort(utils.sortCaseSensitive())
+      .join('')
+  })
+
+  editor.edit((e) => {
+    if (isLastLineANewline) {
+      sortedLines.push('')
+    }
+    e.replace(range, sortedLines.join('\n'))
+  })
+})
+
 nova.commands.register('sort.byLineLength', (editor) => {
   const range = editor.selectedRange
   const text = editor.getTextInRange(range)

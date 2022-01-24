@@ -9,19 +9,23 @@ Extension for nova.app that allows you to perform simple sorting on selections.
 
 # Usage
 
-Currently you can sort in 5 different ways:
+Currently you can sort in 6 different ways:
 
-  - Sort multiple lines alphanumerically.
-  - Sort multiple lines alphanumerically (case insensitive).
-  - Sort content of one or more lines. For example a line containing `cba` will become `abc`.
-  - Sort multiple lines based on length (the number of characters including whitespace).
-  - Sort multiple lines based on length but reversed.
+  - Sort inline
+  - Sort inline (case sensitive)
+  - Sort lines alphanumerically
+  - Sort lines alphanumerically (case sensitive)
+  - Sort lines based on length
+  - Sort lines based on length (reversed)
 
 # Examples
 
 ```js
 // 1. Sort inline
 cba120 --> 012abc
+
+// if case sensitive
+cba120CBA --> 012aAbBcC
 
 // 2. Sort inline (multiline)
 cba

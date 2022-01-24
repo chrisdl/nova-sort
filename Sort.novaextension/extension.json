@@ -8,10 +8,10 @@
   "repository": "https://github.com/chrisdl/nova-sort",
   "bugs": "https://github.com/chrisdl/nova-sort/issues",
   "main": "main.js",
-  
+
   "activationEvents": ["*"],
   "entitlements": { },
-  
+
   "commands": {
     "editor": [
       {
@@ -25,6 +25,10 @@
       {
         "title": "Sort Inline",
         "command": "sort.inline"
+      },
+      {
+        "title": "Sort Inline (Case Sensitive)",
+        "command": "sort.inline-cs"
       },
       {
         "title": "Sort Lines by Line Length",
