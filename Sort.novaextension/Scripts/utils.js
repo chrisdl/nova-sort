@@ -25,8 +25,9 @@ function sortCaseInsensitive (options = {}) {
 }
 
 function _isNumber (x) {
-  if (Array.isArray(x)) return false
-  return !Number.isNaN(Number.parseInt(x))
+  if (typeof x !== 'string') return false
+  return !isNaN(x) &&
+         !Number.isNaN(Number.parseFloat(x, 10))
 }
 
 function isNumeric (arr) {
