@@ -1,7 +1,7 @@
 language: node_js
-dist: precise
+dist: trusty
 node_js:
   - 14
   - 16
   - 17
-  - 18
+  # - 18
