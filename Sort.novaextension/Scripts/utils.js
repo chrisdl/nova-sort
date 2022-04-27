@@ -24,10 +24,22 @@ function sortCaseInsensitive (options = {}) {
   return new Intl.Collator(undefined, opts).compare
 }
 
+function _isNumber (x) {
+  if (typeof x !== 'string') return false
+  return !isNaN(x) &&
+         !Number.isNaN(Number.parseFloat(x, 10))
+}
+
+function isNumeric (arr) {
+  return arr.every(_isNumber)
+}
+
 module.exports = {
   lastInArrayIsEmptyString,
   sortByLineLength,
   sortByLineLengthReversed,
   sortCaseSensitive,
-  sortCaseInsensitive
+  sortCaseInsensitive,
+  isNumeric,
+  _isNumber
 }

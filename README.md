@@ -50,15 +50,15 @@ abc2
 ABC1
 abc2 // the numbers matter more than the case.
 
-// It is worth mentioning that because the use case for the sorting is programming
-// we do not take into account numbers currently. Meaning that:
-1
+
+// 3.1 sorting lines detects numeric.
 2
 10
+3
 // Becomes
-1
-10
 2
+3
+10
 
 // 4. Sort lines (case insensitive)
 ABC
@@ -91,4 +91,12 @@ b
 ```
 
 # Sorting
+
 Behind the scenes we are using the [Intl.Collator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator) for the sorting. Since we are not hardcoding the locale I suspect the sorting will actually be slightly different depending on your locale and the language you are sorting, but I am not sure. If this is the case that's fantastic!. If you can confirm or deny this please open an issue with some examples.
+
+Nova-sort does detect if what you are sorting is only numeric and will try to adjust for this and perform a numeric sort.
+
+
+# Development
+
+Run tests using `npm test` or `npx jest <flags>`
