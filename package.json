@@ -1,6 +1,6 @@
 {
   "name": "nova-sort",
-  "version": "1.3.7",
+  "version": "2.0.0",
   "description": "A Nova.app extension for sorting selections",
   "main": "Sort.novaextension/Scripts/main.js",
   "repository": {
@@ -12,6 +12,11 @@
   },
   "author": "Chris DiLorenzo",
   "license": "ISC",
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
   "devDependencies": {
     "eslint": "^7.13.0",
     "eslint-config-standard": "^16.0.2",
