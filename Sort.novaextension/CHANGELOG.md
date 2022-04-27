@@ -1,8 +1,8 @@
-## Version 2.1.0 (2022-04-26)
+## Version 2.1.0 (2022-04-27)
 
 Attempt to detect numeric (currently very basic, works only if you are sorting numbers, not strings of numbers for example) values in what is being sorted and add the `numeric: true` configuration to the Intl.Collator sorter to make it sort the numbers properly.
 
-  - [FEATURE] Add numeric detection [#13](https://github.com/chrisdl/nova-sort/pull/13)
+  - [FEATURE] Add numeric detection [#14](https://github.com/chrisdl/nova-sort/pull/14)
 
 ## Version 2.0.0 (2022-01-24)
 
@@ -10,7 +10,7 @@ This version changes how the sorting works. We used to use the built in javascri
 
   - [FEATURE] Updating the sorting algorithm to use Intl.Collator [#12](https://github.com/chrisdl/nova-sort/pull/12)
   - [FEATURE] Adds case insensitive sorting. [#12](https://github.com/chrisdl/nova-sort/pull/12)
-  - [DOCS] Update docs to be very specific about what sorting behavior users can expect [#13](https://github.com/chrisdl/nova-sort/pull/13)
+  - [DOCS] Update docs to be very specific about what sorting behavior users can expect [#12](https://github.com/chrisdl/nova-sort/pull/12)
 
 ## Version 1.3.7 (2021-01-21)
 

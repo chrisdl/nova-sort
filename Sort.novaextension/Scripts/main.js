@@ -48,6 +48,7 @@ nova.commands.register('sort.lines-cs', (editor) => {
     if (isLastLineANewline) {
       lines.pop()
     }
+
     const config = {}
     if (utils.isNumeric(lines)) {
       config.numeric = true
@@ -74,14 +75,11 @@ nova.commands.register('sort.inline', (editor) => {
   if (isLastLineANewline) {
     lines.pop()
   }
-  const config = {}
-  if (utils.isNumeric(lines)) {
-    config.numeric = true
-  }
+
   const sortedLines = lines.map(line => {
     return line
       .split('')
-      .sort(utils.sortCaseInsensitive(config))
+      .sort(utils.sortCaseInsensitive())
       .join('')
   })
 
@@ -103,15 +101,10 @@ nova.commands.register('sort.inline-cs', (editor) => {
   if (isLastLineANewline) {
     lines.pop()
   }
-
-  const config = {}
-  if (utils.isNumeric(lines)) {
-    config.numeric = true
-  }
   const sortedLines = lines.map(line => {
     return line
       .split('')
-      .sort(utils.sortCaseSensitive(config))
+      .sort(utils.sortCaseSensitive())
       .join('')
   })
 

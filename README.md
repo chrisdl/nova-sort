@@ -50,7 +50,8 @@ abc2
 ABC1
 abc2 // the numbers matter more than the case.
 
-// Detect numeric
+
+// 3.1 sorting lines detects numeric.
 2
 10
 3
@@ -98,4 +99,4 @@ Nova-sort does detect if what you are sorting is only numeric and will try to ad
 
 # Development
 
-Run tests using `npm test`
+Run tests using `npm test` or `npx jest <flags>`
