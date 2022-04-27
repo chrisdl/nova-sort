@@ -3,7 +3,9 @@ const {
   sortByLineLength,
   sortByLineLengthReversed,
   sortCaseSensitive,
-  sortCaseInsensitive
+  sortCaseInsensitive,
+  _isNumber,
+  isNumeric
 } = require('./utils.js')
 
 test('sortByLineLength', () => {
@@ -162,4 +164,57 @@ test('Accent matters', () => {
       'a',
       'ä'
     ])
+})
+
+test('Properly sorts numeric if pass correct config var', () => {
+  expect([
+    2,
+    10,
+    1
+  ].sort(sortCaseInsensitive({ numeric: true })))
+    .toEqual([
+      1,
+      2,
+      10
+    ])
+  expect([
+    '1',
+    '10',
+    '2'
+  ].sort(sortCaseSensitive({ numeric: true })))
+    .toEqual([
+      '1',
+      '2',
+      '10'
+    ])
+})
+
+test('_isNumber = true', () => {
+  expect(_isNumber(1)).toBe(true)
+  expect(_isNumber('1')).toBe(true)
+  expect(_isNumber(0)).toBe(true)
+  expect(_isNumber(986)).toBe(true)
+  expect(_isNumber('986')).toBe(true)
+})
+
+test('_isNumber = false', () => {
+  expect(_isNumber('a')).toBe(false)
+  expect(_isNumber(true)).toBe(false)
+  expect(_isNumber(undefined)).toBe(false)
+  expect(_isNumber([])).toBe(false)
+  expect(_isNumber([1])).toBe(false)
+  expect(_isNumber({ a: 2 })).toBe(false)
+})
+
+test('isNumeric = true', () => {
+  expect(isNumeric([1, 2, '3'])).toBe(true)
+  expect(isNumeric(['1'])).toBe(true)
+  expect(isNumeric(['1', '2', '10'])).toBe(true)
+  expect(isNumeric([1, 2])).toBe(true)
+})
+
+test('isNumeric = false', () => {
+  expect(isNumeric([1, 'a'])).toBe(false)
+  expect(isNumeric(['e'])).toBe(false)
+  expect(isNumeric(['hello'])).toBe(false)
 })

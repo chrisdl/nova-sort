@@ -1,3 +1,9 @@
+## Version 2.1.0 (2022-04-26)
+
+Attempt to detect numeric (currently very basic, works only if you are sorting numbers, not strings of numbers for example) values in what is being sorted and add the `numeric: true` configuration to the Intl.Collator sorter to make it sort the numbers properly.
+
+  - [FEATURE] Add numeric detection [#13](https://github.com/chrisdl/nova-sort/pull/13)
+
 ## Version 2.0.0 (2022-01-24)
 
 This version changes how the sorting works. We used to use the built in javascript `.sort()` but it behaved in a way that users did not find intuitive (especially regarding uppercase vs lowercase). This version uses a new sorting algorithm (which  you can see in `utils.js`) that uses the [Intl.Collator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Collator) for better sorting. It also adds a case-insensitive mode.
