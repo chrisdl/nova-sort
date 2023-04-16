@@ -1,3 +1,10 @@
+## Version 2.2.0 (2023-04-16)
+
+Spring cleaning.
+
+  - [MAINTENANCE] Node 18, Add @chrisdl as codeowner, update npm packages, update github actions versions. [#17](https://github.com/chrisdl/nova-sort/pull/17)
+  - [MAINTENANCE] Fix variable name readability issue deepsource was complaining about. [#16](https://github.com/chrisdl/nova-sort/pull/16)
+
 ## Version 2.1.0 (2022-04-27)
 
 Attempt to detect numeric (currently very basic, works only if you are sorting numbers, not strings of numbers for example) values in what is being sorted and add the `numeric: true` configuration to the Intl.Collator sorter to make it sort the numbers properly.
