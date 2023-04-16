@@ -3,10 +3,12 @@ function lastInArrayIsEmptyString (arr) {
 }
 
 function sortByLineLength (a, b) {
-  const x = a.trim()
-  const y = b.trim()
-  if (x.length === y.length) return 0
-  return x.length - y.length
+  const trimmedA = a.trim()
+  const trimmedB = b.trim()
+  if (trimmedA.length === trimmedB.length) {
+    return 0
+  }
+  return trimmedA.length - trimmedB.length
 }
 
 function sortByLineLengthReversed (a, b) {
