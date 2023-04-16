@@ -8,7 +8,8 @@
     "url": "git+https://github.com/chrisdl/nova-sort.git"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "standard": "standard --fix"
   },
   "author": "Chris DiLorenzo",
   "license": "ISC",
