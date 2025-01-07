@@ -100,3 +100,8 @@ Nova-sort does detect if what you are sorting is only numeric and will try to ad
 # Development
 
 Run tests using `npm test` or `npx jest <flags>`
+
+
+# New stewardship
+
+I unfortunately no longer use Nova, if anyone wants to take over stewardship of this extension I would be happy to accomodate. I would suggest contacting me through LinkedIn https://www.linkedin.com/in/cdilorenzo/
